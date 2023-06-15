@@ -16,7 +16,7 @@ const helper = ({ n, cache, ...props }: HelperProps): number => {
 
   for (let i = 0; i < lengths.length; i++) {
     if (i == n) continue;
-    if (currentDimensions.length >= lengths[i] && currentDimensions.width >= widths[i]) {
+    if (currentDimensions.length > lengths[i] && currentDimensions.width > widths[i]) {
       towerHeights[i] =
         currentDimensions.height +
         helper({
@@ -54,6 +54,16 @@ const input: Dimensions[] = [
     height: 34
   },
   {
+    length: 4,
+    width: 4,
+    height: 34
+  },
+  {
+    length: 4,
+    width: 4,
+    height: 34
+  },
+  {
     length: 5,
     width: 3,
     height: 50
@@ -68,4 +78,5 @@ const input: Dimensions[] = [
 // BUG: everything works with the wanted time complexity but similar boxes
 // (same dimensions) make the function go on and endless loop.
 
-highestStableTower(buildInput(input)); // should return 65
+const result = highestStableTower(buildInput(input)); // should return 65
+console.log(result);
