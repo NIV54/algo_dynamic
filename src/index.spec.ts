@@ -18,6 +18,11 @@ describe("Main Logic", () => {
       length: 2,
       width: 2,
       height: 15
+    },
+    {
+      length: 2,
+      width: 2,
+      height: 15
     }
   ];
 
@@ -94,8 +99,8 @@ describe("Main Logic", () => {
     expect(result).toEqual(expected);
   });
 
-  it.skip("should return highest stable tower with similar boxes", () => {
+  it("should return highest stable tower with similar boxes", () => {
     const result = highestStableTower(buildInput(input));
-    expect(result).toEqual(150);
+    expect(result).toEqual(65);
   });
 });
