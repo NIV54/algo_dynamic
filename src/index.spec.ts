@@ -1,3 +1,4 @@
+import { Dimensions } from "./types";
 import { buildInput } from "./utils";
 
 import { highestStableTower } from "./";

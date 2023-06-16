@@ -1,3 +1,4 @@
+import { BaseProps, Dimensions, HelperProps } from "./types";
 import { buildInput } from "./utils";
 
 const helper = ({ n, cache, ...props }: HelperProps): number => {
