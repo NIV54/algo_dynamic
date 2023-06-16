@@ -1,3 +1,5 @@
+import { BaseProps, Dimensions } from "./types";
+
 const pick =
   <T, U extends keyof T>(key: U) =>
   (value: T) =>
