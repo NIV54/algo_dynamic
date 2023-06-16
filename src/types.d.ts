@@ -1,3 +1,8 @@
+export interface Range {
+  start?: number;
+  end: number;
+}
+
 export interface Dimensions {
   length: number;
   width: number;

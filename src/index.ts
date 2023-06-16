@@ -1,5 +1,5 @@
-import { BaseProps, Dimensions, HelperProps } from "./types";
-import { buildInput } from "./utils";
+import { BaseProps, Dimensions, HelperProps, Range } from "./types";
+import { buildInput, random } from "./utils";
 
 const helper = ({ n, cache, ...props }: HelperProps): number => {
   const { lengths, widths, heights } = props;
@@ -48,33 +48,22 @@ export const highestStableTower = (props: BaseProps) => {
   return max;
 };
 
-const input: Dimensions[] = [
-  {
-    length: 4,
-    width: 4,
-    height: 34
-  },
-  {
-    length: 4,
-    width: 4,
-    height: 34
-  },
-  {
-    length: 4,
-    width: 4,
-    height: 34
-  },
-  {
-    length: 5,
-    width: 3,
-    height: 50
-  },
-  {
-    length: 2,
-    width: 2,
-    height: 15
-  }
-];
+const run = (boxesCount: number, sizeRange: Range) => {
+  const boxes: Dimensions[] = Array(boxesCount)
+    .fill(boxesCount)
+    .map(() => ({
+      length: random(sizeRange),
+      width: random(sizeRange),
+      height: random(sizeRange)
+    }));
 
-const result = highestStableTower(buildInput(input));
-console.log(result);
+  console.log("Number of boxes: " + boxesCount);
+  console.log(boxes);
+  const result = highestStableTower(buildInput(boxes));
+  console.log("Highest possible tower: " + result);
+};
+
+const sizeRange: Range = { start: 1, end: 200 };
+
+run(20, sizeRange);
+run(30, sizeRange);

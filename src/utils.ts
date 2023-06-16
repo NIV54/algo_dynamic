@@ -1,4 +1,7 @@
-import { BaseProps, Dimensions } from "./types";
+import { BaseProps, Dimensions, Range } from "./types";
+
+export const random = ({ start = 0, end }: Range) =>
+  Math.floor(Math.random() * (end - start + 1)) + start;
 
 const pick =
   <T, U extends keyof T>(key: U) =>
