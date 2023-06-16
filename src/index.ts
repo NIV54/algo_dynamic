@@ -76,8 +76,5 @@ const input: Dimensions[] = [
   }
 ];
 
-// BUG: everything works with the wanted time complexity but similar boxes
-// (same dimensions) make the function go on and endless loop.
-
-const result = highestStableTower(buildInput(input)); // should return 65
+const result = highestStableTower(buildInput(input));
 console.log(result);
